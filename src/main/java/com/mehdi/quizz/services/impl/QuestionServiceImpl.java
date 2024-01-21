@@ -23,4 +23,14 @@ public class QuestionServiceImpl implements QuestionService {
     public List<Question> listAllQuestions() {
         return questionRepository.findAll();
     }
+
+    @Override
+    public List<Question> listQuestionsByCategory(String category) {
+        return questionRepository.findByCategory(category);
+    }
+
+    @Override
+    public Question addQuestion(Question question) {
+        return questionRepository.save(question);
+    }
 }
